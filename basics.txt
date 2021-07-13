@@ -2,6 +2,4 @@ Oops
 
 Exceptions
 
-Multithreading
-
 Collections
