@@ -10,7 +10,7 @@ to check git pull
 
 Lambda expressions
 
-
+to check push command
 
 final copy
 done my changes
