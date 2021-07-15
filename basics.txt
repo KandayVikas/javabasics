@@ -5,7 +5,7 @@ Exceptions
 Collections
 
 
-
+to check for fetch command
 
 
 Lambda expressions
