@@ -6,7 +6,7 @@ Collections
 
 
 to check for fetch command
-
+to check git pull
 
 Lambda expressions
 
