@@ -1,2 +1,5 @@
 # javabasics
-to check push
+to check pushfeature2
+feature3
+added feature3
+feature2
