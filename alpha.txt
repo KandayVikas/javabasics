@@ -1,1 +1,135 @@
-hi alpha
+ls lists the files in current directory
+to create txt file touch basics.txt
+creating local repo(add,commit)
+CREATE FOLDER NAME EX:TEST
+git init
+echo "hello,git" >> readme.txt
+git add
+git commit
+git status
+git log
+viewing history
+notepad readme.txt
+(opens notepad)
+you can update by entering other msgs
+hello,git(old sentence)
+hi, everyone
+git add -u
+git commit -m "updated this"
+difference between 2 versions?
+git diff Head~1..Head or git diff Head~1..(Head1 is older version nd head is new version)
+add 2 files at onces?
+touch file1.txt file2.txt
+git add -A
+git commit -m "added 2 files at once"
+git log(you can check)
+deleting file?
+
+Use git rm.
+If you want to remove the file from the Git repository and the filesystem, use:
+git rm file1.txt
+git commit -m "remove file1.txt"
+But if you want to remove the file only from the Git repository and not remove it from the filesystem, use:
+
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+
+to check content in file? ex:cat file3.txt
+undo uncommited changes:
+undo changes made to file(undoing changes to the working copy)? git checkout file3.txt
+undo changes made to whole files in folder?  git checkout -- .
+
+undo commited changes:
+git revert 7783838838 i.e commit id (7783838838)
+undo/redoing changes made to the repository?
+redo
+git reset -hard 7789889 (it redos changes to particular version at last time)
+cleaning working files
+ex:touch temp1.txt temp2.txt(creates 2 files)
+git clean -n 
+output:would remove both files
+git clean -f
+removed
+working with git remotely?
+git clone httpslink from github
+to see all  commits from this folder?
+git log
+in precise way
+git log --oneline
+statistics
+to find how many number of commits done?
+git log --oneline|wc -l
+to see graph view ?
+git log --oneline --graph (we can see different merges and branches)
+to know authors(alphabetically) who made commits,displays commit messages and how many commits they made particularly?
+git shortlog
+to know who made different commits in  decreasing order with particular email-id?
+git  shortlog -sn
+we can also see all these statistics and graphs in github
+to know the what was last commit made ?
+git show head
+by particular id?
+git show head 72828
+git default name from where the source came from ?
+ git remote
+to know the https url ?
+git remote -v
+If you have private repo you can demand a password for one or both read or write (port 80/443 http(s))
+for read only(9418 port git) it is not user friendly to read this u need to call organization infrastructure team
+ssh 22 portal also can be used for read-write .It uses ssh keys for authentication 
+file n/a for cloning,pulling,pushing (read-write)
+to know  details of repo cat .git/config
+to know what are the branches 
+git branch
+to know the past branches history in github?
+git branch -r
+to see the versions in git in repo
+git tag(displays all versions i.e to mark all release points)
+to create tag by annotated tags(can give the message and all the info about tagger is present and it will be stored as complete object in git repo)
+step 1:move to that branch ex:git checkout master
+git tag -a v1.2 -m "version 1.2"
+by lightweighted(no message can be kept and full info is not displayed like who is tagger nd tym tagged)
+git tag v1.4-lw or git tag v1.4
+to delete tag
+git tag -d v1.4-lw
+to push tags 
+git push --tags
+git fetch
+If you only want to see all of the current branches and changes in your remote repository, 
+Git fetch can get you all of the information you need without actually making any local changes to your work.
+This gives you time to decide on the best course of action for incorporating your changes, such as merging them in or fast-forwarding your local branch. 
+git remote?
+If i have local repository and should add remote repository then
+git remote add origin https://github.com/KandayVikas/javabasics.git
+you can keep any name rather than origin also
+origin is the human-friendly name for the URL that the remote repository is stored at
+get fetch -all (fetches all branches)
+If i type git log
+it shows all commits made on local repo but now if i made modification in remote repo and enter git log it wont display
+so after modification in remote repo type git log origin/main to see commits then to reflect that changes to local repo 
+enter git merge origin/main
+rather than fetch and merge u can use git pull
+git branch --set-upstream-to main origin main (this upstream tracking branch is basically what branch remotely does my local branch mirror)
+git pull
+Use git pull to update a local repository from the corresponding remote repository. 
+Ex: While working locally on master, execute git pull to update the local copy of master and update the other remote tracking branches.
+ tags will stay for shah1 its like friendly name but branches changes
+ git commit -m is used to submit the file in the staging area; git commit -am is used to submit the tracked file. 
+Traced files are files that have been included in version control management.
+to rename a branch git branch -m fix1(old name) fix2(new name)
+to delete a branch git branch -d fix2
+create and move to branch at a tym git checkout -b feature2
+to recover all deleted commits
+git reflog (to see where all heads refs are present)
+git branch fix2(deleted branch name) sha id 92882ac
+stashing changes (it is holding area for the changes to happen so rather than doing commit u can use stash after changes happen u can stash apply)
+echo "feature 2 changes" >> readme.md
+git stash
+cat readme.md(you cant find feature 2 changes here)
+git stash list
+git stash apply(to apply)
+to remove from stash git stash pop
+to again reset stash
+git stash
+to add branch git stash branch feature_add
+git commit -am "hh"
