@@ -12,6 +12,7 @@ Lambda expressions
 
 to check push command
 
+to push
 final copy
 done my changes
 
